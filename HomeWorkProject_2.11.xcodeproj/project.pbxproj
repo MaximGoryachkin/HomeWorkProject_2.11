@@ -16,6 +16,7 @@
 		B53CD5F226C4555600EAFF64 /* RoverPhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53CD5F126C4555600EAFF64 /* RoverPhotoCell.swift */; };
 		B53CD5F526C4556700EAFF64 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53CD5F426C4556700EAFF64 /* NetworkManager.swift */; };
 		B53CD5F826C4557300EAFF64 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53CD5F726C4557300EAFF64 /* Photo.swift */; };
+		B53E088926C56E50007269A1 /* RoverInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53E088826C56E50007269A1 /* RoverInfoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		B53CD5F126C4555600EAFF64 /* RoverPhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoverPhotoCell.swift; sourceTree = "<group>"; };
 		B53CD5F426C4556700EAFF64 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		B53CD5F726C4557300EAFF64 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
+		B53E088826C56E50007269A1 /* RoverInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoverInfoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +67,7 @@
 				B53CD5D926C4551B00EAFF64 /* AppDelegate.swift */,
 				B53CD5DB26C4551B00EAFF64 /* SceneDelegate.swift */,
 				B53CD5DF26C4551B00EAFF64 /* Main.storyboard */,
+				B53E088826C56E50007269A1 /* RoverInfoViewController.swift */,
 				B53CD5EE26C4554B00EAFF64 /* RoverTableViewController.swift */,
 				B53CD5F126C4555600EAFF64 /* RoverPhotoCell.swift */,
 				B53CD5F426C4556700EAFF64 /* NetworkManager.swift */,
@@ -152,6 +155,7 @@
 				B53CD5EF26C4554B00EAFF64 /* RoverTableViewController.swift in Sources */,
 				B53CD5DC26C4551B00EAFF64 /* SceneDelegate.swift in Sources */,
 				B53CD5F226C4555600EAFF64 /* RoverPhotoCell.swift in Sources */,
+				B53E088926C56E50007269A1 /* RoverInfoViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
