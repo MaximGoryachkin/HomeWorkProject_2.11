@@ -25,7 +25,7 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="03l-0a-ich">
-                                <rect key="frame" x="20" y="148" width="374" height="152"/>
+                                <rect key="frame" x="20" y="108" width="374" height="152"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Rover name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BMf-2a-cfW">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="34"/>
@@ -50,7 +50,7 @@
                         <constraints>
                             <constraint firstItem="03l-0a-ich" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="9pJ-iQ-LsI"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="03l-0a-ich" secondAttribute="trailing" constant="20" id="9w1-oD-7zS"/>
-                            <constraint firstItem="03l-0a-ich" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="60" id="Wz8-y8-6DY"/>
+                            <constraint firstItem="03l-0a-ich" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="Wz8-y8-6DY"/>
                             <constraint firstItem="03l-0a-ich" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="X4d-mm-XZY"/>
                             <constraint firstItem="q7O-15-wih" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="er2-W9-bmb"/>
                             <constraint firstItem="q7O-15-wih" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="jbO-nK-rRx"/>
@@ -58,9 +58,9 @@
                     </view>
                     <navigationItem key="navigationItem" id="Isz-7J-GiO"/>
                     <connections>
-                        <outlet property="cameraNameLabel" destination="Hkn-mM-Cem" id="edJ-B8-0GP"/>
-                        <outlet property="roverNameLabel" destination="BMf-2a-cfW" id="BsR-Ud-vBf"/>
-                        <outlet property="solNumberLabel" destination="l2s-LT-lLv" id="CY8-S1-x4Z"/>
+                        <outlet property="cameraNameTextField" destination="Hkn-mM-Cem" id="edJ-B8-0GP"/>
+                        <outlet property="roverNameTextField" destination="BMf-2a-cfW" id="BsR-Ud-vBf"/>
+                        <outlet property="solNumberTextField" destination="l2s-LT-lLv" id="CY8-S1-x4Z"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -162,8 +162,8 @@
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="w9j-8P-8Xv">
                                 <rect key="frame" x="197" y="258" width="20" height="20"/>
                             </activityIndicatorView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vfw-pC-dKa">
-                                <rect key="frame" x="20" y="456" width="374" height="406"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Text" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vfw-pC-dKa">
+                                <rect key="frame" x="20" y="456" width="374" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -176,7 +176,6 @@
                             <constraint firstItem="Vfw-pC-dKa" firstAttribute="leading" secondItem="A4t-10-tUC" secondAttribute="leading" constant="20" id="XXP-RH-1az"/>
                             <constraint firstItem="w9j-8P-8Xv" firstAttribute="centerX" secondItem="rno-4f-Tuc" secondAttribute="centerX" id="ZW4-hB-dbB"/>
                             <constraint firstItem="rno-4f-Tuc" firstAttribute="leading" secondItem="A4t-10-tUC" secondAttribute="leading" id="bTB-sF-Jbi"/>
-                            <constraint firstItem="Vfw-pC-dKa" firstAttribute="bottom" secondItem="A4t-10-tUC" secondAttribute="bottom" id="c4o-aJ-uLW"/>
                             <constraint firstItem="Vfw-pC-dKa" firstAttribute="top" secondItem="rno-4f-Tuc" secondAttribute="bottom" constant="8" symbolic="YES" id="sO0-BU-A2R"/>
                             <constraint firstItem="A4t-10-tUC" firstAttribute="trailing" secondItem="Vfw-pC-dKa" secondAttribute="trailing" constant="20" id="u1e-yc-XMg"/>
                             <constraint firstItem="w9j-8P-8Xv" firstAttribute="centerY" secondItem="rno-4f-Tuc" secondAttribute="centerY" id="uic-ee-Rj6"/>
@@ -187,6 +186,7 @@
                     <connections>
                         <outlet property="activityIndicator" destination="w9j-8P-8Xv" id="TZy-dK-ddv"/>
                         <outlet property="roverImage" destination="rno-4f-Tuc" id="5eM-ek-xdX"/>
+                        <outlet property="roverInfoLabel" destination="Vfw-pC-dKa" id="5fA-Ru-vDb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f7J-x8-m8c" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

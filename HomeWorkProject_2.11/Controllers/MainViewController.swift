@@ -8,24 +8,16 @@
 import UIKit
 
 class MainViewController: UIViewController {
-    @IBOutlet weak var roverNameLabel: UITextField!
-    @IBOutlet weak var cameraNameLabel: UITextField!
-    @IBOutlet weak var solNumberLabel: UITextField!
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    @IBOutlet weak var roverNameTextField: UITextField!
+    @IBOutlet weak var cameraNameTextField: UITextField!
+    @IBOutlet weak var solNumberTextField: UITextField!
 
-        // Do any additional setup after loading the view.
-    }
-    
-
-    /*
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        guard let roverTableVC = segue.destination as? RoverTableViewController else { return }
+        roverTableVC.roverName = roverNameTextField.text
+        roverTableVC.solNumber = solNumberTextField.text
     }
-    */
 
 }

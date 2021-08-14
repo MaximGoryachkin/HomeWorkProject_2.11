@@ -10,7 +10,6 @@ import UIKit
 class RoverInfoViewController: UIViewController {
     
     var roverPhoto: RoverPhoto!
-    var photo: UIImage!
     
     @IBOutlet weak var roverImage: RoverPhotoImageView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
@@ -26,17 +25,14 @@ class RoverInfoViewController: UIViewController {
     
     private func fetchImage() {
         activityIndicator.startAnimating()
+        roverInfoLabel.text = roverPhoto.description
         DispatchQueue.global().async {
             let stringURL = self.roverPhoto.img_src
-            
+
             DispatchQueue.main.async {
                 self.roverImage.fetchImage(from: stringURL)
                 self.activityIndicator.stopAnimating()
-//                self.roverInfoLabel.text = """
-//                            Sol is \(self.roverPhoto.sol)
-//                            Earth date is \(self.roverPhoto.earth_date)
-//                            Rover is \(self.roverPhoto.rover.name)
-//                    """
+                
             }
         }
     }

@@ -9,9 +9,12 @@ import UIKit
 
 class RoverTableViewController: UITableViewController {
 
+    var roverName: String!
+    var solNumber: String!
     
-    
-    private let photosURL = "https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=800&api_key=9Q4NCMnDV0aro3aCh6Z5iwf1RI18njvj3rgLNeeJ"
+    private var photosURL: String {
+        "https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=\(solNumber ?? "80")&api_key=9Q4NCMnDV0aro3aCh6Z5iwf1RI18njvj3rgLNeeJ"
+    }
     
     private var roverPhotos: [RoverPhoto] = []
     

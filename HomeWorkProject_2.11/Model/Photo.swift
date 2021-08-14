@@ -16,6 +16,14 @@ struct RoverPhoto: Decodable {
     let img_src: String
     let earth_date: String
     let rover: Rover
+    
+    var description: String {
+        """
+    Sol is \(sol)
+    Earth date is \(earth_date)
+    Rover is \(rover.name)
+    """
+    }
 }
 
 struct Camera: Decodable {
