@@ -47,8 +47,8 @@ class ImageManager {
                 print(error?.localizedDescription ?? "No error desctription")
                 return
             }
-            guard url == response.url else { return }
-            
+            //guard url == response.url else { return }
+
             complition(data, response)
             
         }.resume()
