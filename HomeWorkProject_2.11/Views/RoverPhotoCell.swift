@@ -11,7 +11,7 @@ import UIKit
 class RoverPhotoCell: UITableViewCell {
 
     @IBOutlet var solNumber: UILabel!
-    @IBOutlet var roverPhoto: UIImageView!
+    @IBOutlet var roverPhoto: RoverPhotoImageView!
     @IBOutlet var eathDayNumber: UILabel!
     @IBOutlet var roverName: UILabel!
     
@@ -19,16 +19,7 @@ class RoverPhotoCell: UITableViewCell {
         solNumber.text = "Sol is \(photo.sol)"
         eathDayNumber.text = "Earth date is \(photo.earth_date)"
         roverName.text = "Rover name is \(photo.rover.name)"
-        
-        DispatchQueue.global().async {
-            let stringURL = photo.img_src
-            guard let imageURL = URL(string: stringURL) else { return }
-            guard let imageData = try? Data(contentsOf: imageURL) else { return }
-            
-            DispatchQueue.main.async {
-                self.roverPhoto.image = UIImage(data: imageData)
-            }
-        }
+        roverPhoto.fetchImage(from: photo.img_src)
     }
     
 }

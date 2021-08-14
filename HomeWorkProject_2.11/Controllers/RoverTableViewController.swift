@@ -8,17 +8,18 @@
 import UIKit
 
 class RoverTableViewController: UITableViewController {
+
+    
     
     private let photosURL = "https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=800&api_key=9Q4NCMnDV0aro3aCh6Z5iwf1RI18njvj3rgLNeeJ"
     
     private var roverPhotos: [RoverPhoto] = []
-    private var photos: [UIImage?] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setRoverPhoto()
         tableView.rowHeight = 70
-        print(photos)
+        setupRefreshControl()
     }
     
     // MARK: - Table view data source
@@ -31,15 +32,9 @@ class RoverTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! RoverPhotoCell
         
         cell.configure(with: roverPhotos[indexPath.row])
-        photos.append(cell.roverPhoto.image)
         
         return cell
     }
-    
-//    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        let photo = photos[indexPath.row]
-//        performSegue(withIdentifier: "segue", sender: photo)
-//    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let roverInfoVC = segue.destination as? RoverInfoViewController else { return }
@@ -57,3 +52,17 @@ class RoverTableViewController: UITableViewController {
     
 }
 
+extension RoverTableViewController {
+    func setupRefreshControl() {
+        refreshControl = UIRefreshControl()
+        refreshControl?.attributedTitle = NSAttributedString(string: "Pull to refresh")
+        refreshControl?.addTarget(self, action: #selector(downloadData), for: .valueChanged)
+    }
+    
+    @objc private func downloadData() {
+        setRoverPhoto()
+        if self.refreshControl != nil {
+            self.refreshControl?.endRefreshing()
+        }
+    }
+}

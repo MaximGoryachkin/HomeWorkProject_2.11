@@ -12,7 +12,7 @@ class RoverInfoViewController: UIViewController {
     var roverPhoto: RoverPhoto!
     var photo: UIImage!
     
-    @IBOutlet weak var roverImage: UIImageView!
+    @IBOutlet weak var roverImage: RoverPhotoImageView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var roverInfoLabel: UILabel!
     
@@ -28,11 +28,9 @@ class RoverInfoViewController: UIViewController {
         activityIndicator.startAnimating()
         DispatchQueue.global().async {
             let stringURL = self.roverPhoto.img_src
-            guard let imageURL = URL(string: stringURL) else { return }
-            guard let imageData = try? Data(contentsOf: imageURL) else { return }
             
             DispatchQueue.main.async {
-                self.roverImage.image = UIImage(data: imageData)
+                self.roverImage.fetchImage(from: stringURL)
                 self.activityIndicator.stopAnimating()
 //                self.roverInfoLabel.text = """
 //                            Sol is \(self.roverPhoto.sol)
