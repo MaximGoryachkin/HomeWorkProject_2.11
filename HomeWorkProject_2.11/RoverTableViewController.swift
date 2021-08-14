@@ -31,15 +31,9 @@ class RoverTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! RoverPhotoCell
         
         cell.configure(with: roverPhotos[indexPath.row])
-        photos.append(cell.roverPhoto.image)
         
         return cell
     }
-    
-//    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        let photo = photos[indexPath.row]
-//        performSegue(withIdentifier: "segue", sender: photo)
-//    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let roverInfoVC = segue.destination as? RoverInfoViewController else { return }
@@ -54,6 +48,5 @@ class RoverTableViewController: UITableViewController {
         }
     }
 
-    
 }
 

@@ -16,13 +16,11 @@ class NetworkManager {
     func fetchData(from url: String?, with complition: @escaping (Photo) -> Void) {
         guard let stringURL = url else { return }
         guard let url = URL(string: stringURL) else { return }
-        
         URLSession.shared.dataTask(with: url) { (data, _, error) in
             if let error = error {
                 print(error)
                 return
             }
-            
             guard let data = data else { return }
             
             do {

@@ -21,10 +21,8 @@ class RoverPhotoCell: UITableViewCell {
         roverName.text = "Rover name is \(photo.rover.name)"
         
         DispatchQueue.global().async {
-            let stringURL = photo.img_src
-            guard let imageURL = URL(string: stringURL) else { return }
+            guard let imageURL = URL(string: photo.img_src) else { return }
             guard let imageData = try? Data(contentsOf: imageURL) else { return }
-            
             DispatchQueue.main.async {
                 self.roverPhoto.image = UIImage(data: imageData)
             }
